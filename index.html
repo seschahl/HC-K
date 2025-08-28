@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Chaparral Konferens</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1, h2 { color: #333; }
+        nav a { margin-right: 15px; text-decoration: none; color: #007BFF; }
+        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+        .hidden { display: none; }
+    </style>
+    <script>
+        function showDay(day) {
+            document.getElementById('thursday').classList.add('hidden');
+            document.getElementById('friday').classList.add('hidden');
+            document.getElementById(day).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <h1>High Chaparral Konferens</h1>
+    <nav>
+        <a href="#" onclick="showDay('thursday')">Torsdag 4 september</a>
+        <a href="#" onclick="showDay('friday')">Fredag 5 september</a>
+    </nav>
+
+    <div id="thursday">
+        <h2>Schema - Torsdag 4 september</h2>
+        <table>
+            <tr><th>Säljare</th><th>09:00-09:15</th><th>09:15-09:30</th><th>09:30-09:45</th><th>09:45-10:00</th><th>10:00-10:15</th><th>10:15-10:30</th><th>10:30-10:45
+PAUS</th><th>10:45-11:00</th><th>11:00-11:15</th><th>11:15-11:30</th><th>11:30-11:45</th><th>11:45-12:00</th><th>12:00-12:45
+LUNCH</th><th>12:45-13:00</th><th>13:00-13:15</th><th>13:15-13:30</th><th>13:30-13:45</th><th>13:45-14:00</th><th>14:00-14:15</th></tr>
+            <tr><td>MOA ATTÅSEN</td><td>FRISTADS AB</td><td>HENKEL NORDEN AB</td><td>Systemtext</td><td>NEDERMAN NORDIC AB</td><td>TECHTRONIC INDUSTRIES SWEDEN</td><td>ABENA</td><td>PAUS</td><td>ORKLA WOUND CARE AB</td><td>HULTAFORS GROUP FOOTWEAR</td><td>SUNDSTRÖMS SAFETY AB</td><td>IP INDUSTRIPRODUKTER AB</td><td>CEJN NORDEN AB</td><td>LUNCH</td><td>GUNNEBO INDUSTRIER AB</td><td>MURRELEKTRONIK</td><td>BLÅKLÄDER AB</td><td>GUIDE GLOVES AB</td><td>ZARGES AB</td><td>HÖRBY BRUK</td></tr>
+<tr><td>JOHAN LINDSKOG</td><td>3M SVENSKA AB</td><td>CEJN NORDEN AB</td><td>HELLERMANN TYTON AB</td><td>PLUM</td><td>BOSCH AB</td><td>CRC INDUSTRIES SWEDEN AB</td><td>PAUS</td><td>HENKEL NORDEN AB</td><td>Systemtext</td><td>KYOCERA SENCO SWEDEN AB</td><td>MOLDEX</td><td>STAHLWILLE NORDIC A/S</td><td>LUNCH</td><td>SUNDSTRÖMS SAFETY AB</td><td>TYROLIT AB</td><td>Ejot</td><td>IP INDUSTRIPRODUKTER AB</td><td>NEDERMAN NORDIC AB</td><td>GUNNEBO INDUSTRIER AB</td></tr>
+<tr><td>ROBERT NYBERG</td><td>SNA EUROPE (INDUSTRIES) AB</td><td>WESTAL AB</td><td>ORKLA WOUND CARE AB</td><td>TRANEMO TEXTIL AB</td><td>SIEVI</td><td>NEDERMAN NORDIC AB</td><td>PAUS</td><td>GUNNEBO INDUSTRIER AB</td><td>CEJN NORDEN AB</td><td>HENKEL NORDEN AB</td><td>Systemtext</td><td>GUIDE GLOVES AB</td><td>LUNCH</td><td>ZARGES AB</td><td>ABENA</td><td>TECHTRONIC INDUSTRIES SWEDEN</td><td>HULTAFORS GROUP FOOTWEAR</td><td>EJENDALS AB</td><td>MURRELEKTRONIK</td></tr>
+<tr><td>MARTIN ROSBERG</td><td>GUIDE GLOVES AB</td><td>MURRELEKTRONIK</td><td>BLÅKLÄDER AB</td><td>ABB ELECTRIFICATION SWEDEN</td><td>EXAKTOR</td><td>DANALIM</td><td>PAUS</td><td>SVEDBERGS I DALSTORP AB</td><td>SIKA SVERIGE AB</td><td>LEDVANCE AB</td><td>MP Bolagen</td><td>SNA EUROPE (INDUSTRIES) AB</td><td>LUNCH</td><td>TECHTRONIC INDUSTRIES SWEDEN</td><td>BOSCH AB</td><td>HÖRBY BRUK</td><td>SG ARMATUREN AB</td><td>FRANKE FUTURUM AB</td><td>WESTAL AB</td></tr>
+<tr><td>PATRIK ECKLEIN</td><td>BLÅKLÄDER AB</td><td>NEDERMAN NORDIC AB</td><td>GUNNEBO INDUSTRIER AB</td><td>HULTAFORS GROUP FOOTWEAR</td><td>TYROLIT AB</td><td>TRANEMO TEXTIL AB</td><td>PAUS</td><td>ZARGES AB</td><td>ABENA</td><td>ORKLA WOUND CARE AB</td><td>3M SVENSKA AB</td><td>HENKEL NORDEN AB</td><td>LUNCH</td><td>EJENDALS AB</td><td>Systemtext</td><td>BOSCH AB</td><td>CEJN NORDEN AB</td><td>HELLERMANN TYTON AB</td><td>ABB ELECTRIFICATION SWEDEN</td></tr>
+<tr><td>JOHN HANSSON</td><td>HELLERMANN TYTON AB</td><td>LEDVANCE AB</td><td>MURRELEKTRONIK</td><td>WESTAL AB</td><td>ABB ELECTRIFICATION SWEDEN</td><td>MP Bolagen</td><td>PAUS</td><td>EXAKTOR</td><td>SG ARMATUREN AB</td><td>Ejot</td><td>BÅSTADGRUPPEN-TOPSWEDE</td><td>PLUM</td><td>LUNCH</td><td>BOSCH AB</td><td>CEJN NORDEN AB</td><td>HENKEL NORDEN AB</td><td>Systemtext</td><td>KYOCERA SENCO SWEDEN AB</td><td>SUNDSTRÖMS SAFETY AB</td></tr>
+<tr><td>JÖRGEN ENGSTRÖM</td><td>ZARGES AB</td><td>ABENA</td><td>TECHTRONIC INDUSTRIES SWEDEN</td><td>CEJN NORDEN AB</td><td>HENKEL NORDEN AB</td><td>IP INDUSTRIPRODUKTER AB</td><td>PAUS</td><td>MOLDEX</td><td>NEDERMAN NORDIC AB</td><td>TRANEMO TEXTIL AB</td><td>HULTAFORS GROUP FOOTWEAR</td><td>ORKLA WOUND CARE AB</td><td>LUNCH</td><td>SIEVI</td><td>GUIDE GLOVES AB</td><td>GUNNEBO INDUSTRIER AB</td><td>BLÅKLÄDER AB</td><td>BOSCH AB</td><td>HELLERMANN TYTON AB</td></tr>
+<tr><td>MARCUS NILSUND</td><td>TECHTRONIC INDUSTRIES SWEDEN</td><td>CRC INDUSTRIES SWEDEN AB</td><td>SUNDSTRÖMS SAFETY AB</td><td>MURRELEKTRONIK</td><td>KYOCERA SENCO SWEDEN AB</td><td>Systemtext</td><td>PAUS</td><td>STAHLWILLE NORDIC A/S</td><td>BOSCH AB</td><td>GUIDE GLOVES AB</td><td>HELLERMANN TYTON AB</td><td>Ejot</td><td>LUNCH</td><td>IP INDUSTRIPRODUKTER AB</td><td>NEDERMAN NORDIC AB</td><td>WESTAL AB</td><td>MOLDEX</td><td>PLUM</td><td>FRISTADS AB</td></tr>
+<tr><td>EMMA JÖNSSON</td><td>EJENDALS AB</td><td>STAHLWILLE NORDIC A/S</td><td>SVEDBERGS I DALSTORP AB</td><td>SG ARMATUREN AB</td><td>Ejot</td><td>MOLDEX</td><td>PAUS</td><td>PLUM</td><td>SUNDSTRÖMS SAFETY AB</td><td>TYROLIT AB</td><td>EXAKTOR</td><td>KYOCERA SENCO SWEDEN AB</td><td>LUNCH</td><td>FRISTADS AB</td><td>SNA EUROPE (INDUSTRIES) AB</td><td>ZARGES AB</td><td>SNICKERS WORKWEAR AB</td><td>CRC INDUSTRIES SWEDEN AB</td><td>IP INDUSTRIPRODUKTER AB</td></tr>
+<tr><td>STEFAN NILSSON</td><td>WESTAL AB</td><td>PLUM</td><td>ZARGES AB</td><td>SNICKERS WORKWEAR AB</td><td>LEDVANCE AB</td><td>FRISTADS AB</td><td>PAUS</td><td>KYOCERA SENCO SWEDEN AB</td><td>TECHTRONIC INDUSTRIES SWEDEN</td><td>CRC INDUSTRIES SWEDEN AB</td><td>HÖRBY BRUK</td><td>ABB ELECTRIFICATION SWEDEN</td><td>LUNCH</td><td>EXAKTOR</td><td>STAHLWILLE NORDIC A/S</td><td>SUNDSTRÖMS SAFETY AB</td><td>TYROLIT AB</td><td>Ejot</td><td>SIEVI</td></tr>
+<tr><td>MIKAEL MARTINSSON</td><td>ABB ELECTRIFICATION SWEDEN</td><td>DANALIM</td><td>BOSCH AB</td><td>SIKA SVERIGE AB</td><td>ORKLA WOUND CARE AB</td><td>HELLERMANN TYTON AB</td><td>PAUS</td><td>SNA EUROPE (INDUSTRIES) AB</td><td>IP INDUSTRIPRODUKTER AB</td><td>STAHLWILLE NORDIC A/S</td><td>GUNNEBO INDUSTRIER AB</td><td>TYROLIT AB</td><td>LUNCH</td><td>MOLDEX</td><td>TRANEMO TEXTIL AB</td><td>3M SVENSKA AB</td><td>CRC INDUSTRIES SWEDEN AB</td><td>HÖRBY BRUK</td><td>BÅSTADGRUPPEN-TOPSWEDE</td></tr>
+<tr><td>FREDRIK NILSSON</td><td>MURRELEKTRONIK</td><td>KYOCERA SENCO SWEDEN AB</td><td>EJENDALS AB</td><td>CRC INDUSTRIES SWEDEN AB</td><td>FRANKE FUTURUM AB</td><td>BÅSTADGRUPPEN-TOPSWEDE</td><td>PAUS</td><td>Ejot</td><td>MP Bolagen</td><td>SNICKERS WORKWEAR AB</td><td>SUNDSTRÖMS SAFETY AB</td><td>SIKA SVERIGE AB</td><td>LUNCH</td><td>CEJN NORDEN AB</td><td>DANALIM</td><td>EXAKTOR</td><td>ABB ELECTRIFICATION SWEDEN</td><td>TRANEMO TEXTIL AB</td><td>TYROLIT AB</td></tr>
+<tr><td>HANNA NYMAN</td><td>TYROLIT AB</td><td>FRANKE FUTURUM AB</td><td>3M SVENSKA AB</td><td>SVEDBERGS I DALSTORP AB</td><td>CEJN NORDEN AB</td><td>MURRELEKTRONIK</td><td>PAUS</td><td>WESTAL AB</td><td>ABB ELECTRIFICATION SWEDEN</td><td>HELLERMANN TYTON AB</td><td>BLÅKLÄDER AB</td><td>SG ARMATUREN AB</td><td>LUNCH</td><td>LEDVANCE AB</td><td>MP Bolagen</td><td>EJENDALS AB</td><td>SIKA SVERIGE AB</td><td>HENKEL NORDEN AB</td><td>MOLDEX</td></tr>
+<tr><td>JOAKIM SANDBERG</td><td>BÅSTADGRUPPEN-TOPSWEDE</td><td>SNA EUROPE (INDUSTRIES) AB</td><td>EXAKTOR</td><td>ABENA</td><td>HÖRBY BRUK</td><td>SIKA SVERIGE AB</td><td>PAUS</td><td>HULTAFORS GROUP FOOTWEAR</td><td>EJENDALS AB</td><td>DANALIM</td><td>SVEDBERGS I DALSTORP AB</td><td>SNICKERS WORKWEAR AB</td><td>LUNCH</td><td>FRANKE FUTURUM AB</td><td>3M SVENSKA AB</td><td>PLUM</td><td>LEDVANCE AB</td><td>MP Bolagen</td><td>SG ARMATUREN AB</td></tr>
+<tr><td>DAG SELSTAM</td><td>SIKA SVERIGE AB</td><td>EXAKTOR</td><td>MP Bolagen</td><td>DANALIM</td><td>GUIDE GLOVES AB</td><td>3M SVENSKA AB</td><td>PAUS</td><td>FRANKE FUTURUM AB</td><td>SIEVI</td><td>SNA EUROPE (INDUSTRIES) AB</td><td>ZARGES AB</td><td>CRC INDUSTRIES SWEDEN AB</td><td>LUNCH</td><td>HÖRBY BRUK</td><td>SG ARMATUREN AB</td><td>LEDVANCE AB</td><td>FRISTADS AB</td><td>SVEDBERGS I DALSTORP AB</td><td>HULTAFORS GROUP FOOTWEAR</td></tr>
+<tr><td>ANDREAS PERSSON</td><td>SG ARMATUREN AB</td><td>ORKLA WOUND CARE AB</td><td>SIEVI</td><td>SNA EUROPE (INDUSTRIES) AB</td><td>BLÅKLÄDER AB</td><td>ABB ELECTRIFICATION SWEDEN</td><td>PAUS</td><td>LEDVANCE AB</td><td>FRISTADS AB</td><td>BÅSTADGRUPPEN-TOPSWEDE</td><td>TECHTRONIC INDUSTRIES SWEDEN</td><td>ABENA</td><td>LUNCH</td><td>SVEDBERGS I DALSTORP AB</td><td>SIKA SVERIGE AB</td><td>FRANKE FUTURUM AB</td><td>MP Bolagen</td><td>DANALIM</td><td>3M SVENSKA AB</td></tr>
+<tr><td>HANS MALMROS</td><td>HULTAFORS GROUP FOOTWEAR</td><td>HÖRBY BRUK</td><td>FRISTADS AB</td><td>HENKEL NORDEN AB</td><td>ZARGES AB</td><td>WESTAL AB</td><td>PAUS</td><td>GUIDE GLOVES AB</td><td>BÅSTADGRUPPEN-TOPSWEDE</td><td>FRANKE FUTURUM AB</td><td>EJENDALS AB</td><td>DANALIM</td><td>LUNCH</td><td>BLÅKLÄDER AB</td><td>SNICKERS WORKWEAR AB</td><td>SVEDBERGS I DALSTORP AB</td><td>SIEVI</td><td>TECHTRONIC INDUSTRIES SWEDEN</td><td>EXAKTOR</td></tr>
+<tr><td>OLIVER FAGERBERG</td><td>SNICKERS WORKWEAR AB</td><td>Ejot</td><td>IP INDUSTRIPRODUKTER AB</td><td>STAHLWILLE NORDIC A/S</td><td>GUNNEBO INDUSTRIER AB</td><td>TYROLIT AB</td><td>PAUS</td><td>HÖRBY BRUK</td><td>MOLDEX</td><td>PLUM</td><td>BOSCH AB</td><td>NEDERMAN NORDIC AB</td><td>LUNCH</td><td>TRANEMO TEXTIL AB</td><td>CRC INDUSTRIES SWEDEN AB</td><td>KYOCERA SENCO SWEDEN AB</td><td>BÅSTADGRUPPEN-TOPSWEDE</td><td>SNA EUROPE (INDUSTRIES) AB</td><td>ORKLA WOUND CARE AB</td></tr>
+<tr><td>ANTON SÄÄSKI</td><td>TRANEMO TEXTIL AB</td><td>GUIDE GLOVES AB</td><td>MOLDEX</td><td>SUNDSTRÖMS SAFETY AB</td><td>EJENDALS AB</td><td>SNICKERS WORKWEAR AB</td><td>PAUS</td><td>BLÅKLÄDER AB</td><td>3M SVENSKA AB</td><td>SIEVI</td><td>FRISTADS AB</td><td>BÅSTADGRUPPEN-TOPSWEDE</td><td>LUNCH</td><td>HULTAFORS GROUP FOOTWEAR</td><td>PLUM</td><td>ORKLA WOUND CARE AB</td><td>STAHLWILLE NORDIC A/S</td><td>ABENA</td><td>Systemtext</td></tr>
+<tr><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td> </td></tr>
+        </table>
+    </div>
+
+    <div id="friday" class="hidden">
+        <h2>Schema - Fredag 5 september</h2>
+        <table>
+            <tr><th>Tid</th><th>Aktivitet</th></tr>
+            <tr><td>08:00–08:30</td><td>Anders Wallström</td></tr>
+<tr><td>08:30–09:00</td><td>Peter Nyhlén</td></tr>
+<tr><td>09:00–09:15</td><td>Introduktion AP 2026</td></tr>
+<tr><td>09:15–10:15</td><td>Drömmare</td></tr>
+<tr><td>10:15–11:00</td><td>Realist</td></tr>
+<tr><td>11:00–12:00</td><td>Kritiker</td></tr>
+<tr><td>12:00–12:45</td><td>Lunch</td></tr>
+<tr><td>12:45–13:45</td><td>Fortsättning Kritiker</td></tr>
+<tr><td>13:45–14:00</td><td>Gemensam avslut</td></tr>
+        </table>
+    </div>
+</body>
+</html>
