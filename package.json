@@ -1,0 +1,14 @@
+{
+  "name": "hc-k-web",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://<ditt-github-användarnamn>.github.io/HC-K",
+  "dependencies": {},
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
