@@ -1,0 +1,1 @@
+// Karta screen component
