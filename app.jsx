@@ -1886,8 +1886,8 @@ function Home({ go }) {
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/45" />
       <div className="relative z-10 w-full max-w-3xl mx-auto px-4 py-8">
-        <h1 className="text-4xl sm:text-5xl text-amber-100 drop-shadow mb-6 text-center" style={cowboy.headline}>🐎 Välkommen till Eventappen</h1>
-        <p className="text-center text-amber-50/90 mb-6" style={cowboy.body}>Tryck på en flik för att öppna den. Använd alltid "Tillbaka" för att återvända hit.</p>
+        <h1 className="text-4xl sm:text-5xl text-amber-100 drop-shadow mb-6 text-center" style={cowboy.headline}>🐎 Välkommen till High Chaparral</h1>
+        <p className="text-center text-amber-100 mb-6" style={cowboy.body}>Tryck på en flik för att öppna den. Använd alltid "Tillbaka" för att återvända hit.</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           <NavButton onClick={() => go("Torsdag")}>Torsdag</NavButton>
           <NavButton onClick={() => go("Speeddejt")}>Speeddejt</NavButton>
