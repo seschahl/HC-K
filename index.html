@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>HC-K Konferensapp</title>
+</head>
+<body>
+    <div id="fredag">
+        <button onclick="window.location.href='index.html'">Tillbaka</button>
+        <p>Fredag-innehåll här...</p>
+    </div>
+    <div id="speeddejt">
+        <label for="säljare">Välj säljare:</label>
+        <select id="säljare" onchange="filterSchema()">
+            <!-- Options will be populated by JavaScript -->
+        </select>
+        <table id="schema">
+            <!-- Schema will be populated by JavaScript -->
+        </table>
+    </div>
+    <script>
+        let speeddejtData = {};
+        let säljareList = [];
+
+        async function loadData() {
+            const dataRes = await fetch('speeddejt_data.json');
+            speeddejtData = await dataRes.json();
+            const listRes = await fetch('säljare_list.json');
+            säljareList = await listRes.json();
+
+            const select = document.getElementById('säljare');
+            säljareList.forEach(name => {
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                select.appendChild(option);
+            });
+        }
+
+        function filterSchema() {
+            const selected = document.getElementById('säljare').value;
+            const schema = speeddejtData[selected];
+            const table = document.getElementById('schema');
+            table.innerHTML = '';
+            for (const [time, company] of Object.entries(schema)) {
+                const row = document.createElement('tr');
+                const timeCell = document.createElement('td');
+                timeCell.textContent = time;
+                const companyCell = document.createElement('td');
+                companyCell.textContent = company;
+                row.appendChild(timeCell);
+                row.appendChild(companyCell);
+                table.appendChild(row);
+            }
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
