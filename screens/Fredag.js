@@ -1,1 +1,0 @@
-// Fredag screen component
