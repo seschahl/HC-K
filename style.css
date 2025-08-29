@@ -1,0 +1,75 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.tab {
+    display: none;
+    padding: 20px;
+}
+
+#start {
+    background-image: url('assets/images/UploadedImage0.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #000;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+button {
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(139, 69, 19, 0.85); /* SaddleBrown with opacity */
+    color: white;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(160, 82, 45, 0.95); /* Sienna */
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(105, 105, 105, 0.8); /* DimGray */
+    font-size: 16px;
+    padding: 10px 16px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #deb887; /* BurlyWood */
+}
+
+td {
+    background-color: #fffaf0; /* FloralWhite */
+}
