@@ -1,1 +1,0 @@
-// Torsdag screen component
