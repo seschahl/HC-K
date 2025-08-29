@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HC-K Konferensapp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/UploadedImage0.jpg">
+    <script src="script.js"></script>
+</head>
+<body onload="showTab('start')">
+    <div id="start" class="tab" style="background-image: url('assets/images/UploadedImage0.jpg'); background-size: cover; color: white;">
+        <h1>Välkommen till HC-K</h1>
+        <button onclick="showTab('torsdag')">Torsdag</button>
+        <button onclick="showTab('speeddejt')">Speeddejt</button>
+        <button onclick="showTab('boende')">Boende</button>
+        <button onclick="showTab('karta')">Karta</button>
+        <button onclick="showTab('fredag')">Fredag</button>
+    </div>
+
+    <div id="torsdag" class="tab">
+        <button onclick="goBack()">Tillbaka</button>
+        <h2>Torsdag</h2>
+        <img src="assets/images/UploadedImage6.jpg" alt="Schema Torsdag">
+    </div>
+
+    <div id="speeddejt" class="tab">
+        <button onclick="goBack()">Tillbaka</button>
+        <h2>Speeddejt</h2>
+        <select id="säljareDropdown" onchange="filterSäljare()">
+<option value="">Välj säljare</option>
+<option value="MOA ATTÅSEN">MOA ATTÅSEN</option>
+<option value="JOHAN LINDSKOG">JOHAN LINDSKOG</option>
+<option value="ROBERT NYBERG">ROBERT NYBERG</option>
+<option value="MARTIN ROSBERG">MARTIN ROSBERG</option>
+<option value="PATRIK ECKLEIN">PATRIK ECKLEIN</option>
+<option value="JOHN HANSSON">JOHN HANSSON</option>
+<option value="JÖRGEN ENGSTRÖM">JÖRGEN ENGSTRÖM</option>
+<option value="MARCUS NILSUND">MARCUS NILSUND</option>
+<option value="EMMA JÖNSSON">EMMA JÖNSSON</option>
+<option value="STEFAN NILSSON">STEFAN NILSSON</option>
+<option value="MIKAEL MARTINSSON">MIKAEL MARTINSSON</option>
+<option value="FREDRIK NILSSON">FREDRIK NILSSON</option>
+<option value="HANNA NYMAN">HANNA NYMAN</option>
+<option value="JOAKIM SANDBERG">JOAKIM SANDBERG</option>
+<option value="DAG SELSTAM">DAG SELSTAM</option>
+<option value="ANDREAS PERSSON">ANDREAS PERSSON</option>
+<option value="HANS MALMROS">HANS MALMROS</option>
+<option value="OLIVER FAGERBERG">OLIVER FAGERBERG</option>
+<option value="ANTON SÄÄSKI">ANTON SÄÄSKI</option>
+</select>
+<div id="speeddejtTableContainer"></div>
+
+        <script>
+        window.speeddejtData = {
+"MOA ATTÅSEN": [
+["09:00-09:15", "FRISTADS AB"],
+["09:15-09:30", "HENKEL NORDEN AB"],
+["09:30-09:45", "Systemtext"],
+["09:45-10:00", "NEDERMAN NORDIC AB"],
+["10:00-10:15", "TECHTRONIC INDUSTRIES SWEDEN"],
+["10:15-10:30", "ABENA"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "ORKLA WOUND CARE AB"],
+["11:00-11:15", "HULTAFORS GROUP FOOTWEAR"],
+["11:15-11:30", "SUNDSTRÖMS SAFETY AB"],
+["11:30-11:45", "IP INDUSTRIPRODUKTER AB"],
+["11:45-12:00", "CEJN NORDEN AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "GUNNEBO INDUSTRIER AB"],
+["13:00-13:15", "MURRELEKTRONIK"],
+["13:15-13:30", "BLÅKLÄDER AB"],
+["13:30-13:45", "GUIDE GLOVES AB"],
+["13:45-14:00", "ZARGES AB"],
+["14:00-14:15", "HÖRBY BRUK"],
+],
+"JOHAN LINDSKOG": [
+["09:00-09:15", "3M SVENSKA AB"],
+["09:15-09:30", "CEJN NORDEN AB"],
+["09:30-09:45", "HELLERMANN TYTON AB"],
+["09:45-10:00", "PLUM"],
+["10:00-10:15", "BOSCH AB"],
+["10:15-10:30", "CRC INDUSTRIES SWEDEN AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "HENKEL NORDEN AB"],
+["11:00-11:15", "Systemtext"],
+["11:15-11:30", "KYOCERA SENCO SWEDEN AB"],
+["11:30-11:45", "MOLDEX"],
+["11:45-12:00", "STAHLWILLE NORDIC A/S"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "SUNDSTRÖMS SAFETY AB"],
+["13:00-13:15", "TYROLIT AB"],
+["13:15-13:30", "Ejot"],
+["13:30-13:45", "IP INDUSTRIPRODUKTER AB"],
+["13:45-14:00", "NEDERMAN NORDIC AB"],
+["14:00-14:15", "GUNNEBO INDUSTRIER AB"],
+],
+"ROBERT NYBERG": [
+["09:00-09:15", "SNA EUROPE (INDUSTRIES) AB"],
+["09:15-09:30", "WESTAL AB"],
+["09:30-09:45", "ORKLA WOUND CARE AB"],
+["09:45-10:00", "TRANEMO TEXTIL AB"],
+["10:00-10:15", "SIEVI"],
+["10:15-10:30", "NEDERMAN NORDIC AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "GUNNEBO INDUSTRIER AB"],
+["11:00-11:15", "CEJN NORDEN AB"],
+["11:15-11:30", "HENKEL NORDEN AB"],
+["11:30-11:45", "Systemtext"],
+["11:45-12:00", "GUIDE GLOVES AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "ZARGES AB"],
+["13:00-13:15", "ABENA"],
+["13:15-13:30", "TECHTRONIC INDUSTRIES SWEDEN"],
+["13:30-13:45", "HULTAFORS GROUP FOOTWEAR"],
+["13:45-14:00", "EJENDALS AB"],
+["14:00-14:15", "MURRELEKTRONIK"],
+],
+"MARTIN ROSBERG": [
+["09:00-09:15", "GUIDE GLOVES AB"],
+["09:15-09:30", "MURRELEKTRONIK"],
+["09:30-09:45", "BLÅKLÄDER AB"],
+["09:45-10:00", "ABB ELECTRIFICATION SWEDEN"],
+["10:00-10:15", "EXAKTOR"],
+["10:15-10:30", "DANALIM"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "SVEDBERGS I DALSTORP AB"],
+["11:00-11:15", "SIKA SVERIGE AB"],
+["11:15-11:30", "LEDVANCE AB"],
+["11:30-11:45", "MP Bolagen"],
+["11:45-12:00", "SNA EUROPE (INDUSTRIES) AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "TECHTRONIC INDUSTRIES SWEDEN"],
+["13:00-13:15", "BOSCH AB"],
+["13:15-13:30", "HÖRBY BRUK"],
+["13:30-13:45", "SG ARMATUREN AB"],
+["13:45-14:00", "FRANKE FUTURUM AB"],
+["14:00-14:15", "WESTAL AB"],
+],
+"PATRIK ECKLEIN": [
+["09:00-09:15", "BLÅKLÄDER AB"],
+["09:15-09:30", "NEDERMAN NORDIC AB"],
+["09:30-09:45", "GUNNEBO INDUSTRIER AB"],
+["09:45-10:00", "HULTAFORS GROUP FOOTWEAR"],
+["10:00-10:15", "TYROLIT AB"],
+["10:15-10:30", "TRANEMO TEXTIL AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "ZARGES AB"],
+["11:00-11:15", "ABENA"],
+["11:15-11:30", "ORKLA WOUND CARE AB"],
+["11:30-11:45", "3M SVENSKA AB"],
+["11:45-12:00", "HENKEL NORDEN AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "EJENDALS AB"],
+["13:00-13:15", "Systemtext"],
+["13:15-13:30", "BOSCH AB"],
+["13:30-13:45", "CEJN NORDEN AB"],
+["13:45-14:00", "HELLERMANN TYTON AB"],
+["14:00-14:15", "ABB ELECTRIFICATION SWEDEN"],
+],
+"JOHN HANSSON": [
+["09:00-09:15", "HELLERMANN TYTON AB"],
+["09:15-09:30", "LEDVANCE AB"],
+["09:30-09:45", "MURRELEKTRONIK"],
+["09:45-10:00", "WESTAL AB"],
+["10:00-10:15", "ABB ELECTRIFICATION SWEDEN"],
+["10:15-10:30", "MP Bolagen"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "EXAKTOR"],
+["11:00-11:15", "SG ARMATUREN AB"],
+["11:15-11:30", "Ejot"],
+["11:30-11:45", "BÅSTADGRUPPEN-TOPSWEDE"],
+["11:45-12:00", "PLUM"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "BOSCH AB"],
+["13:00-13:15", "CEJN NORDEN AB"],
+["13:15-13:30", "HENKEL NORDEN AB"],
+["13:30-13:45", "Systemtext"],
+["13:45-14:00", "KYOCERA SENCO SWEDEN AB"],
+["14:00-14:15", "SUNDSTRÖMS SAFETY AB"],
+],
+"JÖRGEN ENGSTRÖM": [
+["09:00-09:15", "ZARGES AB"],
+["09:15-09:30", "ABENA"],
+["09:30-09:45", "TECHTRONIC INDUSTRIES SWEDEN"],
+["09:45-10:00", "CEJN NORDEN AB"],
+["10:00-10:15", "HENKEL NORDEN AB"],
+["10:15-10:30", "IP INDUSTRIPRODUKTER AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "MOLDEX"],
+["11:00-11:15", "NEDERMAN NORDIC AB"],
+["11:15-11:30", "TRANEMO TEXTIL AB"],
+["11:30-11:45", "HULTAFORS GROUP FOOTWEAR"],
+["11:45-12:00", "ORKLA WOUND CARE AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "SIEVI"],
+["13:00-13:15", "GUIDE GLOVES AB"],
+["13:15-13:30", "GUNNEBO INDUSTRIER AB"],
+["13:30-13:45", "BLÅKLÄDER AB"],
+["13:45-14:00", "BOSCH AB"],
+["14:00-14:15", "HELLERMANN TYTON AB"],
+],
+"MARCUS NILSUND": [
+["09:00-09:15", "TECHTRONIC INDUSTRIES SWEDEN"],
+["09:15-09:30", "CRC INDUSTRIES SWEDEN AB"],
+["09:30-09:45", "SUNDSTRÖMS SAFETY AB"],
+["09:45-10:00", "MURRELEKTRONIK"],
+["10:00-10:15", "KYOCERA SENCO SWEDEN AB"],
+["10:15-10:30", "Systemtext"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "STAHLWILLE NORDIC A/S"],
+["11:00-11:15", "BOSCH AB"],
+["11:15-11:30", "GUIDE GLOVES AB"],
+["11:30-11:45", "HELLERMANN TYTON AB"],
+["11:45-12:00", "Ejot"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "IP INDUSTRIPRODUKTER AB"],
+["13:00-13:15", "NEDERMAN NORDIC AB"],
+["13:15-13:30", "WESTAL AB"],
+["13:30-13:45", "MOLDEX"],
+["13:45-14:00", "PLUM"],
+["14:00-14:15", "FRISTADS AB"],
+],
+"EMMA JÖNSSON": [
+["09:00-09:15", "EJENDALS AB"],
+["09:15-09:30", "STAHLWILLE NORDIC A/S"],
+["09:30-09:45", "SVEDBERGS I DALSTORP AB"],
+["09:45-10:00", "SG ARMATUREN AB"],
+["10:00-10:15", "Ejot"],
+["10:15-10:30", "MOLDEX"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "PLUM"],
+["11:00-11:15", "SUNDSTRÖMS SAFETY AB"],
+["11:15-11:30", "TYROLIT AB"],
+["11:30-11:45", "EXAKTOR"],
+["11:45-12:00", "KYOCERA SENCO SWEDEN AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "FRISTADS AB"],
+["13:00-13:15", "SNA EUROPE (INDUSTRIES) AB"],
+["13:15-13:30", "ZARGES AB"],
+["13:30-13:45", "SNICKERS WORKWEAR AB"],
+["13:45-14:00", "CRC INDUSTRIES SWEDEN AB"],
+["14:00-14:15", "IP INDUSTRIPRODUKTER AB"],
+],
+"STEFAN NILSSON": [
+["09:00-09:15", "WESTAL AB"],
+["09:15-09:30", "PLUM"],
+["09:30-09:45", "ZARGES AB"],
+["09:45-10:00", "SNICKERS WORKWEAR AB"],
+["10:00-10:15", "LEDVANCE AB"],
+["10:15-10:30", "FRISTADS AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "KYOCERA SENCO SWEDEN AB"],
+["11:00-11:15", "TECHTRONIC INDUSTRIES SWEDEN"],
+["11:15-11:30", "CRC INDUSTRIES SWEDEN AB"],
+["11:30-11:45", "HÖRBY BRUK"],
+["11:45-12:00", "ABB ELECTRIFICATION SWEDEN"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "EXAKTOR"],
+["13:00-13:15", "STAHLWILLE NORDIC A/S"],
+["13:15-13:30", "SUNDSTRÖMS SAFETY AB"],
+["13:30-13:45", "TYROLIT AB"],
+["13:45-14:00", "Ejot"],
+["14:00-14:15", "SIEVI"],
+],
+"MIKAEL MARTINSSON": [
+["09:00-09:15", "ABB ELECTRIFICATION SWEDEN"],
+["09:15-09:30", "DANALIM"],
+["09:30-09:45", "BOSCH AB"],
+["09:45-10:00", "SIKA SVERIGE AB"],
+["10:00-10:15", "ORKLA WOUND CARE AB"],
+["10:15-10:30", "HELLERMANN TYTON AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "SNA EUROPE (INDUSTRIES) AB"],
+["11:00-11:15", "IP INDUSTRIPRODUKTER AB"],
+["11:15-11:30", "STAHLWILLE NORDIC A/S"],
+["11:30-11:45", "GUNNEBO INDUSTRIER AB"],
+["11:45-12:00", "TYROLIT AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "MOLDEX"],
+["13:00-13:15", "TRANEMO TEXTIL AB"],
+["13:15-13:30", "3M SVENSKA AB"],
+["13:30-13:45", "CRC INDUSTRIES SWEDEN AB"],
+["13:45-14:00", "HÖRBY BRUK"],
+["14:00-14:15", "BÅSTADGRUPPEN-TOPSWEDE"],
+],
+"FREDRIK NILSSON": [
+["09:00-09:15", "MURRELEKTRONIK"],
+["09:15-09:30", "KYOCERA SENCO SWEDEN AB"],
+["09:30-09:45", "EJENDALS AB"],
+["09:45-10:00", "CRC INDUSTRIES SWEDEN AB"],
+["10:00-10:15", "FRANKE FUTURUM AB"],
+["10:15-10:30", "BÅSTADGRUPPEN-TOPSWEDE"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "Ejot"],
+["11:00-11:15", "MP Bolagen"],
+["11:15-11:30", "SNICKERS WORKWEAR AB"],
+["11:30-11:45", "SUNDSTRÖMS SAFETY AB"],
+["11:45-12:00", "SIKA SVERIGE AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "CEJN NORDEN AB"],
+["13:00-13:15", "DANALIM"],
+["13:15-13:30", "EXAKTOR"],
+["13:30-13:45", "ABB ELECTRIFICATION SWEDEN"],
+["13:45-14:00", "TRANEMO TEXTIL AB"],
+["14:00-14:15", "TYROLIT AB"],
+],
+"HANNA NYMAN": [
+["09:00-09:15", "TYROLIT AB"],
+["09:15-09:30", "FRANKE FUTURUM AB"],
+["09:30-09:45", "3M SVENSKA AB"],
+["09:45-10:00", "SVEDBERGS I DALSTORP AB"],
+["10:00-10:15", "CEJN NORDEN AB"],
+["10:15-10:30", "MURRELEKTRONIK"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "WESTAL AB"],
+["11:00-11:15", "ABB ELECTRIFICATION SWEDEN"],
+["11:15-11:30", "HELLERMANN TYTON AB"],
+["11:30-11:45", "BLÅKLÄDER AB"],
+["11:45-12:00", "SG ARMATUREN AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "LEDVANCE AB"],
+["13:00-13:15", "MP Bolagen"],
+["13:15-13:30", "EJENDALS AB"],
+["13:30-13:45", "SIKA SVERIGE AB"],
+["13:45-14:00", "HENKEL NORDEN AB"],
+["14:00-14:15", "MOLDEX"],
+],
+"JOAKIM SANDBERG": [
+["09:00-09:15", "BÅSTADGRUPPEN-TOPSWEDE"],
+["09:15-09:30", "SNA EUROPE (INDUSTRIES) AB"],
+["09:30-09:45", "EXAKTOR"],
+["09:45-10:00", "ABENA"],
+["10:00-10:15", "HÖRBY BRUK"],
+["10:15-10:30", "SIKA SVERIGE AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "HULTAFORS GROUP FOOTWEAR"],
+["11:00-11:15", "EJENDALS AB"],
+["11:15-11:30", "DANALIM"],
+["11:30-11:45", "SVEDBERGS I DALSTORP AB"],
+["11:45-12:00", "SNICKERS WORKWEAR AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "FRANKE FUTURUM AB"],
+["13:00-13:15", "3M SVENSKA AB"],
+["13:15-13:30", "PLUM"],
+["13:30-13:45", "LEDVANCE AB"],
+["13:45-14:00", "MP Bolagen"],
+["14:00-14:15", "SG ARMATUREN AB"],
+],
+"DAG SELSTAM": [
+["09:00-09:15", "SIKA SVERIGE AB"],
+["09:15-09:30", "EXAKTOR"],
+["09:30-09:45", "MP Bolagen"],
+["09:45-10:00", "DANALIM"],
+["10:00-10:15", "GUIDE GLOVES AB"],
+["10:15-10:30", "3M SVENSKA AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "FRANKE FUTURUM AB"],
+["11:00-11:15", "SIEVI"],
+["11:15-11:30", "SNA EUROPE (INDUSTRIES) AB"],
+["11:30-11:45", "ZARGES AB"],
+["11:45-12:00", "CRC INDUSTRIES SWEDEN AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "HÖRBY BRUK"],
+["13:00-13:15", "SG ARMATUREN AB"],
+["13:15-13:30", "LEDVANCE AB"],
+["13:30-13:45", "FRISTADS AB"],
+["13:45-14:00", "SVEDBERGS I DALSTORP AB"],
+["14:00-14:15", "HULTAFORS GROUP FOOTWEAR"],
+],
+"ANDREAS PERSSON": [
+["09:00-09:15", "SG ARMATUREN AB"],
+["09:15-09:30", "ORKLA WOUND CARE AB"],
+["09:30-09:45", "SIEVI"],
+["09:45-10:00", "SNA EUROPE (INDUSTRIES) AB"],
+["10:00-10:15", "BLÅKLÄDER AB"],
+["10:15-10:30", "ABB ELECTRIFICATION SWEDEN"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "LEDVANCE AB"],
+["11:00-11:15", "FRISTADS AB"],
+["11:15-11:30", "BÅSTADGRUPPEN-TOPSWEDE"],
+["11:30-11:45", "TECHTRONIC INDUSTRIES SWEDEN"],
+["11:45-12:00", "ABENA"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "SVEDBERGS I DALSTORP AB"],
+["13:00-13:15", "SIKA SVERIGE AB"],
+["13:15-13:30", "FRANKE FUTURUM AB"],
+["13:30-13:45", "MP Bolagen"],
+["13:45-14:00", "DANALIM"],
+["14:00-14:15", "3M SVENSKA AB"],
+],
+"HANS MALMROS": [
+["09:00-09:15", "HULTAFORS GROUP FOOTWEAR"],
+["09:15-09:30", "HÖRBY BRUK"],
+["09:30-09:45", "FRISTADS AB"],
+["09:45-10:00", "HENKEL NORDEN AB"],
+["10:00-10:15", "ZARGES AB"],
+["10:15-10:30", "WESTAL AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "GUIDE GLOVES AB"],
+["11:00-11:15", "BÅSTADGRUPPEN-TOPSWEDE"],
+["11:15-11:30", "FRANKE FUTURUM AB"],
+["11:30-11:45", "EJENDALS AB"],
+["11:45-12:00", "DANALIM"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "BLÅKLÄDER AB"],
+["13:00-13:15", "SNICKERS WORKWEAR AB"],
+["13:15-13:30", "SVEDBERGS I DALSTORP AB"],
+["13:30-13:45", "SIEVI"],
+["13:45-14:00", "TECHTRONIC INDUSTRIES SWEDEN"],
+["14:00-14:15", "EXAKTOR"],
+],
+"OLIVER FAGERBERG": [
+["09:00-09:15", "SNICKERS WORKWEAR AB"],
+["09:15-09:30", "Ejot"],
+["09:30-09:45", "IP INDUSTRIPRODUKTER AB"],
+["09:45-10:00", "STAHLWILLE NORDIC A/S"],
+["10:00-10:15", "GUNNEBO INDUSTRIER AB"],
+["10:15-10:30", "TYROLIT AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "HÖRBY BRUK"],
+["11:00-11:15", "MOLDEX"],
+["11:15-11:30", "PLUM"],
+["11:30-11:45", "BOSCH AB"],
+["11:45-12:00", "NEDERMAN NORDIC AB"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "TRANEMO TEXTIL AB"],
+["13:00-13:15", "CRC INDUSTRIES SWEDEN AB"],
+["13:15-13:30", "KYOCERA SENCO SWEDEN AB"],
+["13:30-13:45", "BÅSTADGRUPPEN-TOPSWEDE"],
+["13:45-14:00", "SNA EUROPE (INDUSTRIES) AB"],
+["14:00-14:15", "ORKLA WOUND CARE AB"],
+],
+"ANTON SÄÄSKI": [
+["09:00-09:15", "TRANEMO TEXTIL AB"],
+["09:15-09:30", "GUIDE GLOVES AB"],
+["09:30-09:45", "MOLDEX"],
+["09:45-10:00", "SUNDSTRÖMS SAFETY AB"],
+["10:00-10:15", "EJENDALS AB"],
+["10:15-10:30", "SNICKERS WORKWEAR AB"],
+["10:30-10:45
+PAUS", "PAUS"],
+["10:45-11:00", "BLÅKLÄDER AB"],
+["11:00-11:15", "3M SVENSKA AB"],
+["11:15-11:30", "SIEVI"],
+["11:30-11:45", "FRISTADS AB"],
+["11:45-12:00", "BÅSTADGRUPPEN-TOPSWEDE"],
+["12:00-12:45
+LUNCH", "LUNCH"],
+["12:45-13:00", "HULTAFORS GROUP FOOTWEAR"],
+["13:00-13:15", "PLUM"],
+["13:15-13:30", "ORKLA WOUND CARE AB"],
+["13:30-13:45", "STAHLWILLE NORDIC A/S"],
+["13:45-14:00", "ABENA"],
+["14:00-14:15", "Systemtext"],
+],
+
+        };
+        </script>
+    </div>
+
+    <div id="boende" class="tab">
+        <button onclick="goBack()">Tillbaka</button>
+        <h2>Boende</h2>
+        <img src="assets/images/UploadedImage7.jpg" alt="Boendeinfo">
+        <img src="assets/images/UploadedImage8.jpg" alt="Boendefördelning">
+    </div>
+
+    <div id="karta" class="tab">
+        <button onclick="goBack()">Tillbaka</button>
+        <h2>Karta</h2>
+        <img src="assets/images/UploadedImage4.jpg" alt="Karta">
+    </div>
+
+    <div id="fredag" class="tab">
+        <button onclick="goBack()">Tillbaka</button>
+        <h2>Fredag</h2>
+        <img src="assets/images/UploadedImage1.jpg" alt="Fredag 1">
+        <img src="assets/images/UploadedImage5.jpg" alt="Fredag 2">
+        <img src="assets/images/UploadedImage2.jpg" alt="Fredag 3">
+        <img src="assets/images/UploadedImage3.jpg" alt="Fredag 4">
+    </div>
+</body>
+</html>
