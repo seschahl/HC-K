@@ -15,7 +15,7 @@ const SPEED_DATA = [
   {
     "Tid": "09:30-09:45",
     "Säljare": "ANDREAS PERSSON",
-    "Leverantör": "SIEVI"
+    "Leverantör": "Zekler"
   },
   {
     "Tid": "09:45-10:00",
@@ -145,7 +145,7 @@ const SPEED_DATA = [
   {
     "Tid": "11:15-11:30",
     "Säljare": "ANTON SÄÄSKI",
-    "Leverantör": "SIEVI"
+    "Leverantör": "Zekler"
   },
   {
     "Tid": "11:30-11:45",
@@ -235,7 +235,7 @@ const SPEED_DATA = [
   {
     "Tid": "11:00-11:15",
     "Säljare": "DAG SELSTAM",
-    "Leverantör": "SIEVI"
+    "Leverantör": "Zekler"
   },
   {
     "Tid": "11:15-11:30",
@@ -655,7 +655,7 @@ const SPEED_DATA = [
   {
     "Tid": "13:30-13:45",
     "Säljare": "HANS MALMROS",
-    "Leverantör": "SIEVI"
+    "Leverantör": "Zekler"
   },
   {
     "Tid": "13:45-14:00",
@@ -1020,7 +1020,7 @@ const SPEED_DATA = [
   {
     "Tid": "12:45-13:00",
     "Säljare": "JÖRGEN ENGSTRÖM",
-    "Leverantör": "SIEVI"
+    "Leverantör": "Zekler"
   },
   {
     "Tid": "13:00-13:15",
@@ -1640,7 +1640,7 @@ const SPEED_DATA = [
   {
     "Tid": "10:00-10:15",
     "Säljare": "ROBERT NYBERG",
-    "Leverantör": "SIEVI"
+    "Leverantör": "Zekler"
   },
   {
     "Tid": "10:15-10:30",
@@ -1805,7 +1805,7 @@ const SPEED_DATA = [
   {
     "Tid": "14:00-14:15",
     "Säljare": "STEFAN NILSSON",
-    "Leverantör": "SIEVI"
+    "Leverantör": "Zekler"
   }
 ];
 
